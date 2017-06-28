@@ -7,15 +7,16 @@ APPLICATION_DIR=~/Applications
 
 build:
 	$(MAKE_MACPASS) build
+	@make link
 
 prepare:
 	@make download
-	@make link
 	
 link:
-	ln -s ${MACPASS_APP} ${APPLICATION_DIR}
+	ln -fs ${MACPASS_APP} ${APPLICATION_DIR}
 
 download:
+	rm -rf ${SOURCE_PATH}
 	git clone https://github.com/mstarke/MacPass ${SOURCE_PATH} --recursive
 	$(MAKE_MACPASS) bootstrap
 
