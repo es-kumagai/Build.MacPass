@@ -1,0 +1,13 @@
+DERIVEDDATA_PATH=${CURDIR}/../DerivedData
+
+build:
+	xcodebuild -scheme MacPass -target MacPass -configuration Release -derivedDataPath ${DERIVEDDATA_PATH}
+	
+bootstrap:
+	carthage bootstrap --platform Mac
+
+update:
+	git pull
+	carthage update
+	git submodule sync
+	git submodule init
