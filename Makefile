@@ -3,6 +3,7 @@ DERIVEDDATA_PATH=${CURDIR}/DerivedData
 MAKE_MACPASS=@make -C ${SOURCE_PATH} -f ${MACPASS_MAKEFILE}
 MACPASS_APP=${DERIVEDDATA_PATH}/Build/Products/Release/MacPass.app
 MACPASS_MAKEFILE=${CURDIR}/Makefile.MacPass
+APPLICATION_DIR=~/Applications
 
 build:
 	$(MAKE_MACPASS) build
@@ -12,7 +13,7 @@ prepare:
 	@make link
 	
 link:
-	ln -s ${MACPASS_APP} .
+	ln -s ${MACPASS_APP} ${APPLICATION_DIR}
 
 download:
 	git clone https://github.com/mstarke/MacPass ${SOURCE_PATH} --recursive
