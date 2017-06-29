@@ -6,9 +6,12 @@ MacPass is a KeyPass tool for macOS distributed by [mstarke/MacPass](https://git
 
 ## How to use
 
+First, download the repository to any directory. Then execute the following command.
+
 ```
 make prepare
 make
+make install
 ```
 
-When you do `make`, MacPass.app will be build and installed in ~/Applications.
+When you do `make`, MacPass.app will be build and installed to ~/Applications.
