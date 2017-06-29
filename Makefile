@@ -7,10 +7,15 @@ APPLICATION_DIR=~/Applications
 
 build:
 	$(MAKE_MACPASS) build
-	@make link
+
+clean:
+	rm -rf ${DERIVEDDATA_PATH}
 
 prepare:
 	@make download
+
+install:
+	cp -rf ${MACPASS_APP} ${APPLICATION_DIR}
 	
 link:
 	ln -fs ${MACPASS_APP} ${APPLICATION_DIR}
